@@ -12,6 +12,10 @@ function importStyle(css, id) {
 module.exports = function(content, file, opt) {
 	var id = file.getId();
 	content = content.replace(/\"/g, '\\\"').replace(/\r?\n/g, '');
-	content = importStyle.toString() + '\n importStyle("' + content + '", "' + id + '");';
+	if (opt.template) {
+		content = opt.template.replace(/\$\{content\}/, content).replace(/\$\{id\}/, id);
+	} else {
+		content = importStyle.toString() + '\n importStyle("' + content + '", "' + id + '");';
+	}
 	return content;
 };

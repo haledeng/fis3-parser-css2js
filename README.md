@@ -28,3 +28,7 @@ fis.match(/\/([^\.]*)\.css/, {
 	parser: fis.plugin('css2js')
 });
 ```
+
+
+### options
+template: the template render js content.
