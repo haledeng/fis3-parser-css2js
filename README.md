@@ -31,4 +31,4 @@ fis.match(/\/([^\.]*)\.css/, {
 
 
 ### options
-template: the template render js content.
+**template:** the template to render js content.
